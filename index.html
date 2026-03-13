@@ -3,237 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Friendship Club</title>
+<title>Mr Gaurav Friendship Club - Premium Networking</title>
+<meta name="description" content="Join our professional social networking platform for meaningful connections and community growth.">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+:root{
+--primary-color:#2bb3c0;
+--secondary-color:#ff5a2f;
+--whatsapp-color:#25D366;
+--bg-light:#f8f9fa;
+--text-dark:#333;
 }
 
 body{
-  background:#000;
-  color:#fff;
+font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+margin:0;
+background:var(--bg-light);
+color:var(--text-dark);
+line-height:1.6;
 }
 
-.container{
-  max-width:480px;
-  margin:auto;
-  padding:20px;
-  text-align:center;
+.header{
+background:var(--primary-color);
+color:white;
+text-align:center;
+padding:15px 10px;
+font-size:22px;
+font-weight:700;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-/* 🌟 GOLDEN HEADER */
-h1{
-  font-size:34px;
-  margin-bottom:35px;
-  background: linear-gradient(45deg, #f9d976, #f39f00, #fff2b2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
-  letter-spacing:1px;
+.section{
+padding:25px;
+background:white;
+margin:15px;
+border-radius:15px;
+box-shadow:0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* SUB HEADING */
-h2{
-  font-size:22px;
-  line-height:1.5;
-  margin-bottom:35px;
+.section h2{
+color:var(--primary-color);
+font-size:22px;
+margin-bottom:15px;
+border-bottom:2px solid var(--bg-light);
+padding-bottom:10px;
 }
 
-.highlight{
-  color:#ffd700;
-  border-bottom:2px solid #ffd700;
-  padding-bottom:2px;
+.section p{
+font-size:16px;
+color:#555;
+margin-bottom:15px;
 }
 
-/* LIST */
-ul{
-  list-style:none;
-  text-align:left;
-  margin-top:20px;
+.info-box{
+background:#e7f7f8;
+border-left:5px solid var(--primary-color);
+padding:15px;
+margin-top:20px;
+border-radius:5px;
 }
 
-ul li{
-  font-size:16px;
-  margin-bottom:12px;
+/* Floating Buttons */
+
+.float-btn{
+position:fixed;
+right:20px;
+color:white;
+padding:12px 25px;
+border-radius:50px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+z-index:999;
+border:2px solid white;
+animation:continuousPop 1.5s infinite ease-in-out;
+text-decoration:none;
 }
 
-/* 💚 ATTRACTIVE WHATSAPP BUTTON */
 .whatsapp-btn{
-  display:block;
-  width:100%;
-  background: linear-gradient(135deg, #00c853, #00e676);
-  color:#fff;
-  text-decoration:none;
-  padding:20px 0;
-  margin:35px 0;
-  font-size:22px;
-  font-weight:bold;
-  border-radius:8px;
-  box-shadow: 0 0 20px rgba(0, 255, 120, 0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+background:#25D366;
+bottom:85px;
 }
 
-.whatsapp-btn:hover{
-  transform: scale(1.04);
-  box-shadow: 0 0 30px rgba(0, 255, 120, 0.9);
+.register-btn{
+background:#ff5a2f;
+bottom:25px;
 }
 
-/* IMAGE SECTION */
-.image-section{
-  width:100%;
-  aspect-ratio:1/1;
-  overflow:hidden;
+@keyframes continuousPop{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
 }
 
-.image-section img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:6px;
-}
-
-/* ===== FULL SCREEN FORCE POPUP ===== */
-#forcePopup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.95);
-  z-index:999999;
-  display:none;
-  justify-content:center;
-  align-items:center;
-}
-
-#forcePopup .box{
-  background:#fff;
-  color:#000;
-  padding:25px;
-  border-radius:18px;
-  max-width:330px;
-  text-align:center;
-}
-
-#forcePopup h3{
-  margin-bottom:10px;
-  font-size:20px;
-}
-
-#forcePopup p{
-  font-size:14px;
-  margin-bottom:20px;
-}
-
-#forcePopup button{
-  width:100%;
-  padding:14px;
-  font-size:16px;
-  font-weight:bold;
-  background:#00c853;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-}
 </style>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4420855371479822');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4420855371479822&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 
 <body>
 
-<!-- FULL SCREEN FORCE POPUP -->
-<div id="forcePopup">
-  <div class="box">
-    <h3> Open in Browser</h3>
-    <p>
-      Tap OK To Open This Site in Chrome.<br><br>
-      Please <b>Tap/ Ok</b> To Open Website.
-    </p>
-    <button id="openBrowserBtn">OK</button>
-  </div>
+<div class="header">
+Mr Gaurav Friendship Club
 </div>
 
-<div class="container">
-  <br><br>
+<div class="section">
+<h2>Connect with Likeminded People</h2>
 
-  <h1>Dimple Friendship Club</h1>
+<p>
+Welcome to <strong>Mr Gaurav Friendship Club</strong>, the most trusted community for professional social networking. We specialize in bringing people together to build lasting friendships and expand personal horizons in a safe, verified environment.
+</p>
 
-  <h2>
-    <span class="highlight">Meeting</span> with High-Profile
-    <span class="highlight">Madam Near You</span>
-  </h2>
+<p>
+Our platform is built on the pillars of <strong>Privacy, Respect, and Genuine Interaction</strong>. Whether you are looking for a companion to talk to or a group of like-minded individuals to network with, we provide the perfect bridge.
+</p>
 
-  <ul>
-    <li>✔ Part-Time Opportunity</li>
-    <li>✔ Trusted High-Profile Madam Network</li>
-    <li>✔ Earnings: ₹16,000 – ₹24,000 per assignment (performance based)</li>
-    <li>✔ Immediate Income Opportunity</li>
-    <li>✔ Flexible work • Attractive incentives DM to apply</li>
-    <li>✔ Chat on WhatsApp for Jo*b information</li>
-  </ul>
-
-  <a class="whatsapp-btn" href="https://wa.me/918821987077?text=Please%20send%20information">
-    💬 Chat on WhatsApp Now
-  </a>
-
-  <div class="image-section">
-    <img src="https://i.postimg.cc/jCV75PpQ/Dimple-friendship-club.jpg" alt="Image">
-  </div>
+<div class="info-box">
+<p><strong>Note:</strong> To maintain the highest level of privacy and security, all membership details, verification steps, and service information are shared directly via our <strong>Official WhatsApp Support.</strong></p>
 </div>
 
-<script>
-(function(){
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
-  const isInApp =
-    ua.includes("Instagram") ||
-    ua.includes("FBAN") ||
-    ua.includes("FBAV");
+</div>
 
-  if(isInApp){
+<div class="section">
+<h2>Why Choose Us?</h2>
 
-    /* 🔒 BACK BUTTON BLOCK (2 lines) */
-    history.pushState(null,null,location.href);
-    window.onpopstate=function(){history.go(1);};
+<ul>
+<li>100% Secure & Confidential Profiles.</li>
+<li>Verified Members Community.</li>
+<li>Instant Support via WhatsApp.</li>
+<li>Multilingual Communication.</li>
+</ul>
 
-    document.body.style.overflow="hidden";
-    const popup=document.getElementById("forcePopup");
-    popup.style.display="flex";
+</div>
 
-    document.getElementById("openBrowserBtn").onclick=function(){
-      const url=window.location.href;
+<!-- WhatsApp Floating Button -->
 
-      if(/Android/i.test(ua)){
-        window.location.href=
-          "intent://" + url.replace(/^https?:\/\//,"") +
-          "#Intent;scheme=https;package=com.android.chrome;end";
-      }
-      else if(/iPhone|iPad|iPod/i.test(ua)){
-        window.location.href=url;
-      }
-    };
-  }
-})();
-</script>
+<a href="https://wa.me/918819073580?text=I%20got%20your%20number%20on%20Instagram" class="float-btn whatsapp-btn">
+WhatsApp Now
+</a>
+
+<!-- Register Floating Button -->
+
+<a href="https://wa.me/918819073580?text=I%20want%20to%20register%20in%20Mr%20Gaurav%20Friendship%20Club" class="float-btn register-btn">
+Register Now
+</a>
 
 </body>
 </html>
-
-
-
